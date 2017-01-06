@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="logo">
+
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <img src={{styles[0].thumbnail_pic}} (click)="showImage(0)">
+      </ion-col>
+      <ion-col width-50>
+        <img src={{styles[1].thumbnail_pic}} (click)="showImage(1)">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+        <img src={{styles[2].thumbnail_pic}} (click)="showImage(2)">
+      </ion-col>
+      <ion-col width-50>
+        <img src={{styles[3].thumbnail_pic}} (click)="showImage(3)">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div text-right>
+    <button ion-button (click)="booknow()">BOOK NOW</button>
+  </div>
+
+</ion-content>

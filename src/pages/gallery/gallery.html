@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Gallery page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<script src="gallery.ts"></script>
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>gallery</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngIf="pictures.length == 0">
+
+    <ion-card-content>
+      No images
+    </ion-card-content>
+
+  </ion-card>
+
+  <div class="theGallery" text-center *ngIf="pictures.length > 0">
+    <img [src]="image" *ngFor="let image of pictures; let i = index" alt="" (tap)="openFullSizeImg(image)">
+  </div>
+
+</ion-content>
+
