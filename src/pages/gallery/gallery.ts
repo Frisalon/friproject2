@@ -48,8 +48,9 @@ export class GalleryPage {
   }
 
   openFullSizeImg(image) {
-    var url="/android_asset/www/"+image;
-    console.log('file:///android_asset/www/'+image);
+    //file://assets/chime.
+    var url="file://"+image;
+    console.log(url);
     PhotoViewer.show(url, '', {share: false});
   }
 

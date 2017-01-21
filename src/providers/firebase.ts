@@ -24,7 +24,8 @@ export class Firebase {
       Service:service,
       Date: date,
       Time: time,
-      Note:note
+      Note:note,
+      Status:'pending'
     };
     let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers }); // Create a request option
@@ -32,6 +33,9 @@ export class Firebase {
     return this.http.put(url, body, options) // ...using post request
       .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
       .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+  }
+  getReservation(){
+      return this.http.get('https://frisalon-150317.firebaseio.com/Bookings/').map((res:Response) => res.json());
   }
 
 

@@ -1,6 +1,59 @@
-<ion-content>
-  <div class="logo">
+<!--<ion-header>
 
+  <ion-navbar>
+    <ion-title>HOME</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+<ion-content>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="booknow()"> <ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+  </ion-fab>
+
+  <div class="logo">
+    <img src="assets/logo.jpg">
+  </div>
+  <div *ngIf="hasbooking">
+    <ion-card>
+      <ion-card-header>BOOKINGS</ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-30>
+              Name
+            </ion-col>
+            <ion-col width-20>
+              Style
+            </ion-col>
+            <ion-col width-20>
+              Time
+            </ion-col>
+            <ion-col width-30>
+              Status
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+       <hr>
+        <ion-grid>
+          <ion-row ngFor="booking of mybookings">
+            <ion-col width-30>
+              {{booking.Firstname}}
+            </ion-col>
+            <ion-col width-20>
+              {{booking.Service}}
+            </ion-col>
+            <ion-col width-20>
+              {{booking.Time}}
+            </ion-col>
+            <ion-col width-30>
+              {{booking.Status}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
   </div>
   <ion-grid>
     <ion-row>
@@ -20,8 +73,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div text-right>
-    <button ion-button (click)="booknow()">BOOK NOW</button>
-  </div>
+  <!--<div text-right>
+    <button ion-button icon-right (click)="booknow()">BOOK NOW</button>
+  </div>-->
 
 </ion-content>
